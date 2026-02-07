@@ -41,9 +41,11 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 90vw;
-      height: 90vw;
-      margin: -45vx 0 0 -45px;
+      width: 90vmin;
+      height: 90vmin;
+      max-width: 450px;
+      max-height: 450px;
+      transform: translate(-50%, -50%);
       /* per-item delay via CSS variable --i (1..N) */
       --i: 1;
     }
