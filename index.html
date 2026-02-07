@@ -41,7 +41,9 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      margin: -225px 0 0 -225px;
+      width: 90vw;
+      height: 90vw;
+      margin: -45vx 0 0 -45px;
       /* per-item delay via CSS variable --i (1..N) */
       --i: 1;
     }
@@ -134,5 +136,22 @@
       ui.appendChild(love);
     }
   </script>
+  <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+
+  // Try autoplay immediately
+  window.addEventListener("load", () => {
+    music.play().catch(() => {
+      // If autoplay blocked, play on first tap
+      document.body.addEventListener("click", () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
 </body>
 </html>
